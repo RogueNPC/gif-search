@@ -11,7 +11,10 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 // Routes
+// example URL "http://localhost:3000/?term=hey"
 app.get('/', (req, res) => {
+    console.log(req.query) // => "{ term: hey" }
+  
     res.render('home')
   })
 
